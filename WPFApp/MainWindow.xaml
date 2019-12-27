@@ -5,18 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d" FontSize="22"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="31*"/>
+      <ColumnDefinition Width="5*"/>
+    </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
       <RowDefinition Height="auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
 
-    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" >
-      <Button x:Name="previousImageButton" Padding="15" Margin="15">Previous</Button>
-      <Button x:Name="sunInformation" Padding="15" Margin="15">Sun Information</Button>
-      <Button x:Name="nextImageButton" Padding="15" Margin="15">Next</Button>
+    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="160,0,50.047,0" >
+      <Button x:Name="previousImageButton" Padding="15" Margin="15" Click="previousImageButton_Click">Previous</Button>
+      <Button x:Name="sunInformation" Padding="15" Margin="15" Click="sunInformation_Click">Sun Information</Button>
+      <Button x:Name="nextImageButton" Padding="15" Margin="15" Click="nextImageButton_Click" >Next</Button>
     </StackPanel>
-    <Image Grid.Row="1" x:Name="comicImage" />
+    <Image Grid.Row="1" x:Name="comicImage" Grid.ColumnSpan="2" Margin="20" />
   </Grid>
 </Window>
